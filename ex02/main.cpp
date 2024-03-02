@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:58 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/01 18:29:31 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:54:36 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@
 	std::cout << "using min on x: " << x << " and y: " << y << " result = " << Fixed::min(x, y) << std::endl;
 	return (0);
 }*/
+//SUBJECT MAIN
 
 int	main(void)
 {
@@ -168,12 +169,11 @@ int	main(void)
 
 	std::cout << b << std::endl;
 	std::cout << Fixed::max(a, b) << std::endl;
-	std::cout << b / 0 << std::endl;
+	/*std::cout << b / 0 << std::endl;
 	std::cout << b * 0 << std::endl;
 	while (a != Fixed(15.8560f))
 		a++;
-	std::cout << a << std::endl;
-	
+	std::cout << a << std::endl;*/
 	return (0);
 }
 

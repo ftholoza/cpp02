@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:08:47 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/01 18:05:04 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/02 02:04:38 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,40 @@
 
 const int Fixed::_fractional = 8;
 
+/*------------------------------CONSTRUCTORS--------------------------------*/
+
 Fixed::Fixed()
 {
 	this->_fixedpoint = 0;
+	return ;
 }
 
 Fixed::Fixed(const int value)
 {
 	this->_fixedpoint = value << this->_fractional;
+	return ;
 }
 
 Fixed::Fixed(const float value)
 {
- 	this->_fixedpoint = roundf(value * 256);
-}
-Fixed::~Fixed()
-{
+ 	this->_fixedpoint = roundf(value * (1 << this->_fractional));
+	return ;
 }
 
 Fixed::Fixed(const Fixed& to_copy)
 {
 	*this = to_copy;
+	return ;
 }
+
+/*---------------------------------DESTRUCTOR-------------------------------*/
+
+Fixed::~Fixed()
+{
+	return ;
+}
+
+/*---------------------------------OPERATORS--------------------------------*/
 
 Fixed& Fixed::operator=(const Fixed &to_copy)
 {
@@ -44,29 +56,11 @@ Fixed& Fixed::operator=(const Fixed &to_copy)
 	return (*this);
 }
 
+/*-------------------------[!=|<|>|>=|<=|==]--------------------------------*/
+
 std::ostream& operator<<(std::ostream& os, const Fixed&  _fixed)
 {
 	return os << _fixed.toFloat();
-}
-
-int	Fixed::getRawBits(void) const
-{
-	return (this->_fixedpoint);
-}
-
-void	Fixed::setRawBits(int const fixed_point)
-{
-	_fixedpoint = fixed_point;
-}
-
-float Fixed::toFloat(void) const
-{
-	return (float)((float)this->_fixedpoint / 256);
-}
-
-int	Fixed::toInt(void) const
-{
-	return (this->_fixedpoint / 256);
 }
 
 bool	operator!=(const Fixed &a, const Fixed &b)
@@ -117,6 +111,8 @@ bool			operator==(const Fixed &a, const Fixed &b)
 		return (false);
 }
 
+/*------------------------------[+|*|-|/]----------------------------------*/
+
 Fixed 			operator+(const Fixed &a, const Fixed &b)
 {
 	Fixed	res;
@@ -142,12 +138,12 @@ Fixed 			operator-(const Fixed &a, const Fixed &b)
 Fixed			operator/(const Fixed &a, const Fixed &b)
 {
 	Fixed	res;
-	if (b == 0)
-		std::cout << "undefiend result" << std::endl;
 	float div = ((a.toFloat()) / (b.toFloat()));
-	res.setRawBits(div * 256);
+	res.setRawBits(div * (1 << 8));
 	return (res);
 }
+
+/*-------------------------------INCREMENTQTORS-----------------------------*/
 
 float	Fixed::operator ++(int value)
 {
@@ -186,6 +182,33 @@ float	Fixed::operator --()
 	return (float)((float)i / 256);
 }
 
+/*-------------------------------GETTERS/SETTERS----------------------------*/
+
+int	Fixed::getRawBits(void) const
+{
+	return (this->_fixedpoint);
+}
+
+void	Fixed::setRawBits(int const fixed_point)
+{
+	_fixedpoint = fixed_point;
+	return ;
+}
+
+/*-------------------------------CASTERS------------------------------------*/
+
+float Fixed::toFloat(void) const
+{
+	return (float)((float)this->_fixedpoint / (1 << this->_fractional));
+}
+
+int	Fixed::toInt(void) const
+{
+	return (this->_fixedpoint / 256);
+}
+
+/*--------------------------------MIN/MAX/ABS-------------------------------*/
+
 const Fixed& Fixed::min(const Fixed& a, const Fixed&b)
 {
 	if (a.getRawBits() < b.getRawBits())
@@ -218,3 +241,10 @@ Fixed& Fixed::max(Fixed& a, Fixed&b)
 		return (b);
 }
 
+Fixed	Fixed::abs(Fixed x)
+{
+	if (x < 0)
+		return (x * -1);
+	else
+		return (x);
+}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:46:31 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/01 17:11:13 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:03:25 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Fixed
 		int		toInt(void) const;
 		static	const Fixed& min(const Fixed& a, const Fixed&b);
 		static	const Fixed& max(const Fixed& a, const Fixed&b);
+		static	Fixed  abs(Fixed x);
 		static	Fixed& min(Fixed& a, Fixed&b);
 		static	Fixed& max(Fixed& a, Fixed&b);
 };
@@ -53,11 +54,8 @@ Fixed			operator+(const Fixed &a, const Fixed &b);
 Fixed 			operator*(const Fixed &a, const Fixed &b);
 Fixed 			operator-(const Fixed &a, const Fixed &b);
 Fixed 			operator/(const Fixed &a, const Fixed &b);
-static	Fixed min(const Fixed& a, const Fixed&b);
+/*static	Fixed min(const Fixed& a, const Fixed&b);
 static	Fixed max(const Fixed& a, const Fixed&b);
 static	Fixed min(Fixed& a, Fixed&b);
-static	Fixed max(Fixed& a, Fixed&b);
-
-
-
+static	Fixed max(Fixed& a, Fixed&b);*/
 #endif

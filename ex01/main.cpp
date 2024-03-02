@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:58 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/01 12:04:25 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:33:47 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	Fixed const b(10);
 	Fixed const c(42.42f);
 	Fixed const d(b);
-	Fixed e(42);
+	//Fixed e(42);
 
 	a = Fixed(1234.4321f);
 	
@@ -32,10 +32,10 @@ int	main(void)
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-	a = e = c;
-	std::cout << "a is " << a << std::endl;
-	std::cout << "b is " << b << std::endl;
-	std::cout << "c is " << c << std::endl;
-	std::cout << "d is " << d << std::endl;
+	//a = e = c;
+	//std::cout << "a is " << a << std::endl;
+	//std::cout << "b is " << b << std::endl;
+	//std::cout << "c is " << c << std::endl;
+	//std::cout << "d is " << d << std::endl;
 	return (0);
 }

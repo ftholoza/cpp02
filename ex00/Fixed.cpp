@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:08:47 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/02/28 19:14:28 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/02 01:14:16 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,20 @@ Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->_fixed_point = 0;
-	
+	return ;
 }
 
 Fixed::~Fixed()
 {
 	std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 Fixed::Fixed(Fixed& to_copy)
 {
-	std::cout << "copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 	*this = to_copy;
+	return ;
 }
 
 Fixed& Fixed::operator=(const Fixed& to_copy)
@@ -48,4 +50,5 @@ int	Fixed::getRawBits(void) const
 void	Fixed::setRawBits(int const fixed_point)
 {
 	_fixed_point = fixed_point;
+	return ;
 }
