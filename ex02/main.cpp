@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:58 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/02 01:54:36 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/04 17:29:01 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,42 @@ int	main(void)
 	while (a != Fixed(15.8560f))
 		a++;
 	std::cout << a << std::endl;*/
+	Fixed	c;
+	Fixed const d(Fixed(5.05f) * Fixed(2));
+
+	std::cout << c << std::endl;
+	std::cout << --c << std::endl;
+	std::cout << c << std::endl;
+	std::cout << c-- << std::endl;
+	std::cout << c << std::endl;
+
+	std::cout << d << std::endl;
+	std::cout << Fixed::max(c, d) << std::endl;
+	
+	Fixed	e(d / Fixed(2));
+	std::cout << e << std::endl;
+	if (e < d)
+		std::cout << "ok" << std::endl;
+	else
+		std::cout << "Error" << std::endl;
+	if (e > d)
+		std::cout << "Error" << std::endl;
+	else
+		std::cout << "ok" << std::endl;
+	if (e <= e && e <= d)
+		std::cout << "ok" << std::endl;
+	else
+		std::cout << "Error" << std::endl;
+	if (e >= e && e >= d)
+		std::cout << "Error" << std::endl;
+	else
+		std::cout << "ok" << std::endl;
+	if (e == e)
+		std::cout << "ok" << std::endl;
+	e = e + e;
+	std::cout << e << std::endl;
+	e = e - (b / Fixed(2));
+	std::cout << e << std::endl;
 	return (0);
 }
 

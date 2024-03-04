@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:46:31 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/02 01:05:20 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/04 20:12:03 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ class Fixed
 		float			operator --(int value);
 		float			operator ++();
 		float			operator --();
+		bool			operator!=(Fixed const &b) const;
+		bool			operator<(Fixed const &b) const;
+		bool			operator>(Fixed const &b) const;
+		bool			operator>=(Fixed const &b) const;
+		bool			operator<=(Fixed const &b) const;
+		bool			operator==(Fixed const &b) const;
+		Fixed			operator+(Fixed const &b) const;
+		Fixed 			operator*(Fixed const &b) const;
+		Fixed 			operator-(Fixed const &b) const;
+		Fixed 			operator/(Fixed const &b) const;
 		int		getRawBits(void) const;
 		void	setRawBits(int const fixed_point);
 		float	toFloat(void) const;
@@ -43,15 +53,5 @@ class Fixed
 };
 
 std::ostream&	operator<<(std::ostream& os, const Fixed&  _fixed);
-bool			operator!=(const Fixed &a, const Fixed &b);
-bool			operator<(const Fixed &a, const Fixed &b);
-bool			operator>(const Fixed &a, const Fixed &b);
-bool			operator>=(const Fixed &a, const Fixed &b);
-bool			operator<=(const Fixed &a, const Fixed &b);
-bool			operator==(const Fixed &a, const Fixed &b);
-Fixed			operator+(const Fixed &a, const Fixed &b);
-Fixed 			operator*(const Fixed &a, const Fixed &b);
-Fixed 			operator-(const Fixed &a, const Fixed &b);
-Fixed 			operator/(const Fixed &a, const Fixed &b);
 
 #endif
