@@ -6,14 +6,14 @@
 /*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:36:39 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/02 02:07:27 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/05 03:02:47 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 #include "Fixed.hpp"
 
-Point::Point()
+Point::Point(): x(0), y(0)
 {	
 	return ;
 }
@@ -38,12 +38,12 @@ Point& Point::operator=(Point &to_copy)
 	return (to_copy);
 }
 
-Fixed	Point::get_x(void) 
+Fixed	Point::get_x(void) const
 {
 	return (this->x);
 }
 
-Fixed	Point::get_y(void)
+Fixed	Point::get_y(void) const
 {
 	return (this->y);
 }

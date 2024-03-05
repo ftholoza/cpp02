@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:46:31 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/04 20:12:03 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/05 02:10:45 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Fixed
 		~Fixed();
 		Fixed(const int value);
 		Fixed(const float value);
-		Fixed(const Fixed& to_copy);
+		Fixed(Fixed const &to_copy);
 		Fixed& operator=(const Fixed &to_copy);
 		float			operator ++(int value);
 		float			operator --(int value);
@@ -38,10 +38,10 @@ class Fixed
 		bool			operator>=(Fixed const &b) const;
 		bool			operator<=(Fixed const &b) const;
 		bool			operator==(Fixed const &b) const;
-		Fixed			operator+(Fixed const &b) const;
-		Fixed 			operator*(Fixed const &b) const;
-		Fixed 			operator-(Fixed const &b) const;
-		Fixed 			operator/(Fixed const &b) const;
+		float			operator+(Fixed const &b) const;
+		float 			operator*(Fixed const &b) const;
+		float 			operator-(Fixed const &b) const;
+		float 			operator/(Fixed const &b) const;
 		int		getRawBits(void) const;
 		void	setRawBits(int const fixed_point);
 		float	toFloat(void) const;
@@ -50,6 +50,7 @@ class Fixed
 		static	const Fixed& max(const Fixed& a, const Fixed&b);
 		static	Fixed& min(Fixed& a, Fixed&b);
 		static	Fixed& max(Fixed& a, Fixed&b);
+		static	Fixed& abs(Fixed &a);
 };
 
 std::ostream&	operator<<(std::ostream& os, const Fixed&  _fixed);
