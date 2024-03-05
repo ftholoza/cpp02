@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:08:47 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/05 02:44:43 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/05 18:49:02 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,24 +114,33 @@ bool	Fixed::operator==(Fixed const &b) const
 
 /*------------------------------[+|*|-|/]----------------------------------*/
 
-float 	Fixed::operator+(Fixed const &b) const
+Fixed 	Fixed::operator+(Fixed const &b) const
 {
-	return (this->toFloat() + b.toFloat());
+	Fixed	res(this->toFloat() + b.toFloat());	
+	return (res);
 }
 
-float	Fixed::operator*(Fixed const &b) const
+Fixed	Fixed::operator*(Fixed const &b) const
 {
-	return (this->toFloat() * b.toFloat());
+	Fixed	res(this->toFloat() * b.toFloat());
+	return (res);
 }
 
-float	Fixed::operator-(Fixed const &b) const
+Fixed	Fixed::operator-(Fixed const &b) const
 {
-	return (this->toFloat() - b.toFloat());
+	Fixed	res(this->toFloat() - b.toFloat());
+	return (res);
 }
 
-float	Fixed::operator/(Fixed const &b) const
+Fixed	Fixed::operator/(Fixed const &b) const
 {
-	return (this->toFloat() / b.toFloat());
+	if (b.toFloat() == 0)
+	{
+		std::cout << "Error: division by 0" << std::endl;
+		return (0);
+	}
+	Fixed	res(this->toFloat() / b.toFloat());
+	return (res);
 }
 
 /*-------------------------------INCREMENTQTORS-----------------------------*/
@@ -196,7 +205,7 @@ float Fixed::toFloat(void) const
 
 int	Fixed::toInt(void) const
 {
-	return (this->getRawBits() >> this->_fixedpoint);
+	return (this->getRawBits() >> this->_fractional);
 }
 
 /*--------------------------------MIN/MAX-----------------------------------*/

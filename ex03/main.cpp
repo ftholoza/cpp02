@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:58 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/05 03:02:31 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/05 18:47:17 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 #include "iostream"
 #include "iomanip"
 
-int main()
+/*int main()
 {
-	Point	a(0.245f, 0.34f);
+	Point	a(0, 0);
 	Point	b(10, 30);
 	Point	c(0, 10);
 	Point	point(10, 15);
 	Point	point2(1, 10);
-	Point	point3(0.245f, 0.34f);
-	Point	point4(0.2f, 0.34f);
+	Point	point3(0, 0);
+	Point	point4(1, 10);
 	
 	std::cout << a.get_x() << " " << a.get_y() << std::endl;
 	std::cout << b.get_x() << " " << b.get_y() << std::endl;
@@ -49,6 +49,56 @@ int main()
 		std::cout << " is inside" << std::endl;
 	else
 		std::cout << " is not inside" << std::endl;
+   return 0;
+}*/
+
+int main()
+{
+	Point	a(-1, -1);
+	Point	b(-9.8f, -4.2f);
+	Point	c(-6.4f, 3.4f);
+	Point	point(-5.7f, -0.2f);
+	Point	point2(-5.5f, -3);
+	Point	point3(-8.6f, -0.6f);
+	Point	point4(-9, -3.3f);
+	Point	point5(-6.3f, 3);
+	Point	point6(-3.6f, 1.2f);
+	
+	std::cout << a.get_x() << " " << a.get_y() << std::endl;
+	std::cout << b.get_x() << " " << b.get_y() << std::endl;
+	std::cout << c.get_x() << " " << c.get_y() << std::endl;	
+
+	std::cout << "Point: x: " << point.get_x() << " y: " << point.get_y() << std::endl;
+	if (bsp(a, b, c, point))
+		std::cout << " is inside" << std::endl;
+	else
+		std::cout << " is not inside" << std::endl;
+	std::cout << "Point2: x: " << point2.get_x() << " y: " << point2.get_y() << std::endl;
+	if (bsp(a, b, c, point2))
+		std::cout << " is inside" << std::endl;
+	else
+		std::cout << " is not inside" << std::endl;
+	std::cout << "Point3: x: " << point3.get_x() << " y: " << point3.get_y() << std::endl;
+	if (bsp(a, b, c, point3))
+		std::cout << " is inside" << std::endl;
+	else
+		std::cout << " is not inside" << std::endl;
+	std::cout << "Point4: x: " << point4.get_x() << " y: " << point4.get_y() << std::endl;
+	if (bsp(a, b, c, point4))
+		std::cout << " is inside" << std::endl;
+	else
+		std::cout << " is not inside" << std::endl;
+	std::cout << "Point5: x: " << point5.get_x() << " y: " << point5.get_y() << std::endl;
+	if (bsp(a, b, c, point5))
+		std::cout << " is inside" << std::endl;
+	else
+		std::cout << " is not inside" << std::endl;
+	std::cout << "Point6: x: " << point6.get_x() << " y: " << point6.get_y() << std::endl;
+	if (bsp(a, b, c, point6))
+		std::cout << " is inside" << std::endl;
+	else
+		std::cout << " is not inside" << std::endl;
+	
    return 0;
 }
 

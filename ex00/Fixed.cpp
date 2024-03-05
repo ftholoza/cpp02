@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:08:47 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/02 01:14:16 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/05 17:03:28 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ Fixed::Fixed(Fixed& to_copy)
 Fixed& Fixed::operator=(const Fixed& to_copy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
-	this->_fixed_point = to_copy.getRawBits();
+	if (this != &to_copy)
+		this->_fixed_point = to_copy.getRawBits();
 	return (*this);
 }
 

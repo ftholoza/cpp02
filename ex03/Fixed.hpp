@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 17:46:31 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/05 02:10:45 by francesco        ###   ########.fr       */
+/*   Updated: 2024/03/05 17:49:51 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ class Fixed
 		bool			operator>=(Fixed const &b) const;
 		bool			operator<=(Fixed const &b) const;
 		bool			operator==(Fixed const &b) const;
-		float			operator+(Fixed const &b) const;
-		float 			operator*(Fixed const &b) const;
-		float 			operator-(Fixed const &b) const;
-		float 			operator/(Fixed const &b) const;
+		Fixed			operator+(Fixed const &b) const;
+		Fixed 			operator*(Fixed const &b) const;
+		Fixed 			operator-(Fixed const &b) const;
+		Fixed 			operator/(Fixed const &b) const;
 		int		getRawBits(void) const;
 		void	setRawBits(int const fixed_point);
 		float	toFloat(void) const;
@@ -54,5 +54,6 @@ class Fixed
 };
 
 std::ostream&	operator<<(std::ostream& os, const Fixed&  _fixed);
+Fixed			abs(Fixed &a);
 
 #endif
