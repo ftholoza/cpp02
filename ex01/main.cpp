@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:57:58 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/05 17:09:29 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:16:40 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(void)
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
-	/*std::cout << "My tests:" << std::endl;
+	std::cout << "My tests:" << std::endl;
 	Fixed d;
 	d.setRawBits(42);
 	Fixed e = d;

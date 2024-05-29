@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 18:08:47 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/05 18:07:54 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:19:01 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,7 @@ Fixed	Fixed::operator/(Fixed const &b) const
 float	Fixed::operator ++(int value)
 {
 	int		i;
+	(void)value;
 	
 	i = this->getRawBits();
 	this->setRawBits((i + 1));
@@ -157,6 +158,7 @@ float	Fixed::operator ++(int value)
 float	Fixed::operator --(int value)
 {
 	int i;
+	(void)value;
 	
 	i = this->getRawBits();
 	this->setRawBits((i - 1));
